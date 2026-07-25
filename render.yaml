@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: renda-extra-com-clarinha
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: ./
+    pullRequestPreviewsEnabled: false
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=3600
+      - path: /img/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
