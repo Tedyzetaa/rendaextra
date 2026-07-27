@@ -2,9 +2,19 @@ services:
   - type: web
     name: renda-extra-com-clarinha
     runtime: static
-    buildCommand: ""
+    # Gera config.js a partir das variáveis de ambiente abaixo antes
+    # de publicar o site (ver scripts/generate-config.js).
+    buildCommand: "node scripts/generate-config.js"
     staticPublishPath: ./
     pullRequestPreviewsEnabled: false
+    envVars:
+      # Defina o valor real em Render > Settings > Environment.
+      # sync: false = o valor não fica salvo no render.yaml (evita
+      # vazar o link no repositório).
+      - key: CHECKOUT_URL
+        sync: false
+      - key: ENTRY_PRICE_BRL
+        value: "25"
     headers:
       - path: /*
         name: Cache-Control

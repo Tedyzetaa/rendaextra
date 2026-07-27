@@ -1,28 +1,32 @@
 /**
- * config.js — ponto único de configuração do site
+ * config.js — ARQUIVO GERADO AUTOMATICAMENTE, NÃO EDITE À MÃO
  * ---------------------------------------------------------
- * Para trocar o link de CTA (grupo do Telegram / checkout),
- * edite APENAS a linha abaixo. Todo botão marcado com
- * data-cta="telegram" no HTML será atualizado automaticamente.
+ * Gerado por scripts/generate-config.js a partir das variáveis
+ * de ambiente CHECKOUT_URL e ENTRY_PRICE_BRL.
+ *
+ * Para trocar o link de compra ou o preço:
+ *   - No Render: vá em Settings > Environment, atualize CHECKOUT_URL
+ *     (e/ou ENTRY_PRICE_BRL) e faça um novo deploy.
+ *   - Localmente: edite o arquivo .env e rode
+ *     "node scripts/generate-config.js" de novo.
+ *
+ * Qualquer edição manual feita direto aqui será perdida no próximo build.
  */
 window.SITE_CONFIG = {
   // Link único usado em todos os CTAs do site (header, hero, cards,
   // seção do grupo, resultados, FAQ, CTA final, footer e barra mobile).
-  telegramGroupUrl: "https://t.me/+IFV_XvKdUKwyMDZh",
+  checkoutUrl: "https://t.me/+IFV_XvKdUKwyMDZh",
 
-  // Preço de referência exibido no site (0 = gratuito, como hoje).
-  // Mantenha sincronizado com o que está prometido no texto da página:
-  // se isso mudar para um valor > 0, revise também as seções que
-  // afirmam "100% gratuito" para não gerar informação conflitante.
-  entryPriceBRL: 0
+  // Preço de referência exibido no site, em reais.
+  entryPriceBRL: "25"
 };
 
 (function applySiteConfig() {
   function apply() {
     var cfg = window.SITE_CONFIG || {};
-    if (cfg.telegramGroupUrl) {
+    if (cfg.checkoutUrl) {
       document.querySelectorAll('[data-cta="telegram"]').forEach(function (el) {
-        el.setAttribute("href", cfg.telegramGroupUrl);
+        el.setAttribute("href", cfg.checkoutUrl);
       });
     }
   }
