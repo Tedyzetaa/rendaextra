@@ -15,7 +15,7 @@
 window.SITE_CONFIG = {
   // Link único usado em todos os CTAs do site (header, hero, cards,
   // seção do grupo, resultados, FAQ, CTA final, footer e barra mobile).
-  checkoutUrl: "http://t.me/ClarinhaSenk",
+  checkoutUrl: "https://t.me/rendaextradaclarinha_bot",
 
   // Preço de referência exibido no site, em reais.
   entryPriceBRL: "25"
