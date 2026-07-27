@@ -48,7 +48,7 @@ if (fs.existsSync(envPath)) {
 }
 
 // Valores padrão só entram em ação se a variável de ambiente não existir.
-const CHECKOUT_URL = process.env.CHECKOUT_URL || "https://t.me/+IFV_XvKdUKwyMDZh";
+const CHECKOUT_URL = process.env.CHECKOUT_URL || "http://t.me/ClarinhaSenk";
 const ENTRY_PRICE_BRL = process.env.ENTRY_PRICE_BRL || "25";
 
 const output = `/**
